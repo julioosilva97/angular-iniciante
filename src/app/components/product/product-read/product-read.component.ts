@@ -1,3 +1,4 @@
+import { ActivatedRoute, Router } from '@angular/router';
 import { Product } from './../product.model';
 import { ProductService } from './../product.service';
 import { Component, OnInit } from '@angular/core';
@@ -13,7 +14,10 @@ export class ProductReadComponent implements OnInit {
 
   displayedColumns = ['id','name','price','action'];
 
-  constructor(private productService : ProductService) { }
+  constructor(
+    private productService : ProductService,
+    private router: Router, 
+    private route : ActivatedRoute) { }
 
   ngOnInit(): void {
 
